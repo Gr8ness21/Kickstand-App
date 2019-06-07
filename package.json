@@ -1,0 +1,25 @@
+{
+  "name": "kickstand_app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gr8ness21/Kickstand-App.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Gr8ness21/Kickstand-App/issues"
+  },
+  "homepage": "https://github.com/Gr8ness21/Kickstand-App#readme",
+  "dependencies": {
+    "dotenv": "^8.0.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.5.13"
+  }
+}
