@@ -7,7 +7,12 @@ const cityAPI = require('./API/cityAPI.js');
 const eventsAPI = require('./API/eventsAPI.js');
 const singleEventAPI = require('./API/singleEventAPI.js');
 
+app.use(logger('dev'))
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
+//Linking CSS
+app.use('/client/public', express.static("public"))
 
 app.use(express.static(__dirname + '/client/build/'));
 
