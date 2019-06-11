@@ -1,4 +1,5 @@
 const express = require('express');
+const logger = require('morgan');
 const app = express();
 
 //calling all established functions in respective APIs
@@ -20,7 +21,7 @@ app.use(express.static(__dirname + '/client/build/'));
 // _____________________________________
 
 
-app.get('/API/city', (req, res) => {
+app.get('/API/City', (req, res) => {
     cityAPI.getAllCities()
         .then(cities => {
             res.send(cities);
@@ -28,7 +29,7 @@ app.get('/API/city', (req, res) => {
 });
 
 // Posting a new City
-app.post('/API/city', (req, res) => {
+app.post('/API/City', (req, res) => {
     cityAPI.createNewCity(req.body)
         .then((cities) => {
             res.send(cities);
@@ -36,7 +37,7 @@ app.post('/API/city', (req, res) => {
 });
 
 // Deleting a new City
-app.delete('/API/city/:cityId', (req, res) => {
+app.delete('/API/City/:cityId', (req, res) => {
     cityAPI.deleteCityById(req.params.cityId)
         .then((cities) => {
             res.send(cities);
@@ -44,7 +45,7 @@ app.delete('/API/city/:cityId', (req, res) => {
 });
 
 // Access a single City
-app.get('/API/city/:cityId', (req, res) => {
+app.get('/API/City/:cityId', (req, res) => {
     //gets city
     cityAPI.getCityById(req.params.cityId)
         .then((city) => {
@@ -60,19 +61,108 @@ app.get('/API/city/:cityId', (req, res) => {
 });
 
 // Update a City
-app.put('/api/city/:cityId', (req, res) => {
+app.put('/API/City/:cityId', (req, res) => {
     cityAPI.updateCityById(req.params.cityId, req.body)
         .then((city) => {
             res.send(city)
         });
 });
 
+// _____________________________________
+//              Events List Model 
+// _____________________________________
+
+app.get('/API/Events', (req, res) => {
+    eventsAPI.getAllEvents()
+        .then(events => {
+            res.send(events);
+        });
+});
+
+// Posting a new Event
+app.post('/API/Events', (req, res) => {
+    eventsAPI.createEvent(req.body)
+        .then((events) => {
+            res.send(events);
+        });
+});
+
+// Deleting a Event
+app.delete('/API/Events/:eventId', (req, res) => {
+    eventsAPI.deleteEventById(req.params.eventId)
+        .then((events) => {
+            res.send(events);
+        });
+});
+
+// Grab a single Event Object
+app.get('/API/Events/:eventId', (req, res) => {
+    //gets events
+    eventAPI.getEventById(req.params.eventId)
+        .then(event => {
+            res.send(event);
+        });
+});
+
+// Updating an Event
+app.put('/API/Events/:eventId', (req, res) => {
+    eventAPI.updateEventById(req.params.eventId, req.body)
+        .then((event) => {
+            res.send(event);
+        });
+});
+// _____________________________________
+//              Single Event Model 
+// _____________________________________
+
+app.get('/API/singleEvent', (req, res) => {
+    singleEventAPI.getAllSingleEvents()
+        .then(singleEvent => {
+            res.send(singleEvent);
+        });
+});
+
+// Posting a new Event
+app.post('/API/singleEvent', (req, res) => {
+    singleEventAPI.createSingleEvent(req.body)
+        .then((singleEvent) => {
+            res.send(singleEvent);
+        });
+});
+
+// Deleting a Event
+app.delete('/API/singleEvent/:singleEventId', (req, res) => {
+    singleEventAPI.deleteSingleEventById(req.params.singleEventId)
+        .then((singleEvent) => {
+            res.send(singleEvent);
+        });
+});
+
+// Grab a single Event Object
+app.get('/API/singleEvent/:singleEventId', (req, res) => {
+    //gets single event
+    singleEventAPI.getSingleEventByEventId(req.params.singleEventId)
+        .then(singleEvent => {
+            res.send(singleEvent);
+        });
+});
+
+// Updating an Event
+app.put('/API/singleEvent/:singleEventId', (req, res) => {
+    singleEventAPI.updateSingleEventById(req.params.singleEventId, req.body)
+        .then((singleEvent) => {
+            res.send(singleEvent);
+        });
+});
+
+//_______________________________________________________________//
 
 app.get('/', (req,res) => {
     res.sendFile(__dirname + '/client/build/index.html')
    })
 
 const PORT = process.env.PORT || 3000;
+
 app.listen(PORT, () => {
   console.log("Magic happening on port " + PORT);
 })
