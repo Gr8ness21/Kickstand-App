@@ -1,5 +1,11 @@
 const express = require('express');
 const app = express();
+const methodOverride = require('method-override');
+
+//calling all established functions in respective APIs
+const cityAPI = require('./API/cityAPI.js');
+const eventsAPI = require('./API/eventsAPI.js');
+const singleEventAPI = require('./API/singleEventAPI.js');
 
 app.use(express.json());
 
