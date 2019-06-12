@@ -90,7 +90,7 @@ class Cities extends Component {
                             </form>
                             : null
                     }
-                </div>
+                </div> 
 
             </div>
 
