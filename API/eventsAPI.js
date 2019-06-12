@@ -27,7 +27,7 @@ function getAllEvents() {
 
 // Function to Get all events by Id
 function getAllEventsByEventId(eId) {
-    return EventsCollection.find({ eventId: eId });
+    return EventsCollection.find({ userId: eId });
 }
 
 // Function to get event by Id
