@@ -6,7 +6,7 @@ class Nav extends Component {
         return (
             <div>
                 <div className="navBar">
-                    <Link to={'/'}> Home </Link>
+                    <Link to={'/'}> Kickstand </Link>
                     <Link to={'/cities'}> Cities </Link>
                     <Link to={'/shop'}> Shop </Link>
                 </div>
