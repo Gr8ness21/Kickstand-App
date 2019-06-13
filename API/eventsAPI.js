@@ -6,7 +6,7 @@ const ObjectId = mongoose.Schema.Types.ObjectId;
 const EventsSchema = mongoose.Schema({
     name: String,
     location: Object,
-    userId: ObjectId
+    eventId: ObjectId
 });
 
 // API that will take the "city" collection in mongo
