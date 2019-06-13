@@ -49,15 +49,20 @@ app.get('/API/City/:cityId', (req, res) => {
     //gets city
     cityAPI.getCityById(req.params.cityId)
         .then((city) => {
-            parkApi.getParksByCityId(req.params.cityId)
-                .then((parks) => {
-                    console.log(city)
+
+            //UNCOMMENT ONCE EVENTS ARE WORKING
+
+        //     cityAPI.getCityById(req.params.cityId)
+        //         .then((cities) => {
+        //             console.log(city)
                     
-                    console.log(events)
+        //             console.log(events)
                   
-                    res.send({ city, events });
-                });
+        //             res.send({ city, events });
+        //         });
+            res.send({city});
         });
+
 });
 
 // Update a City
