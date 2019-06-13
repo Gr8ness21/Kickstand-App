@@ -18,21 +18,19 @@ class App extends Component {
       <Router>
 
         <div>
-          heyyyyy
-               <div>
-            <Nav/>
-            Whats uppp reacttttttttt
-          </div> 
+          <div>
+            <Nav />
+          </div>
 
-        <Switch>
+          <Switch>
 
-          <Route exact path="/" component={Home} />
-          <Route exact path="/cities" component={Cities} />
-          <Route exact path="/events" component={Events} />
-          <Route exact path="/cities/:id" component={SingleCity} />
-          <Route exact path="/singleEvent/:id" component={SingleEvent} />
+            <Route exact path="/" component={Home} />
+            <Route exact path="/cities" component={Cities} />
+            <Route exact path="/events" component={Events} />
+            <Route exact path="/cities/:id" component={SingleCity} />
+            <Route exact path="/singleEvent/:id" component={SingleEvent} />
 
-        </Switch>
+          </Switch>
         </div>
 
       </Router>
