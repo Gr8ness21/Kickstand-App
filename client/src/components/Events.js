@@ -7,8 +7,8 @@ class Events extends Component {
         events: [],
         newEvent: {
             name: '',
-            description: '',
-            location: {}
+            description: ''
+            // ,location: {}
         },
         isCityFormDisplayed: false
     }
@@ -28,7 +28,7 @@ class Events extends Component {
     handleChange = (e) => {
         const cloneNewEvent = { ...this.state.newEvent }
         cloneNewEvent[e.target.name] = e.target.value
-        this.setState({ newEvents: cloneNewEvent })
+        this.setState({ newEvent: cloneNewEvent })
     }
 
     createEvent = (e) => {
@@ -44,8 +44,8 @@ class Events extends Component {
                 this.setState({
                     newEvent: {
                         name: '',
-                        description: '',
-                        location: {}
+                        description: ''
+                        // location: {}
                     },
                     isEventFormDisplayed: false,
                     events: eventsList
@@ -87,7 +87,7 @@ class Events extends Component {
                                         type="text"
                                         name="name"
                                         onChange={this.handleChange}
-                                        value={this.state.newEvent.name}
+                                        // value={this.state.newEvent.name}
                                     />
                                 </div>
                                 <div>
@@ -97,7 +97,7 @@ class Events extends Component {
                                         type="text"
                                         name="description"
                                         onChange={this.handleChange}
-                                        value={this.state.newEvent.description}
+                                        // value={this.state.newEvent.description}
                                     />
                                 </div>
                                 <button>Create</button>
