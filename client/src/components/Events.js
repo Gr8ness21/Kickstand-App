@@ -35,10 +35,7 @@ class Events extends Component {
     createEvent = (e) => {
         e.preventDefault()
         axios
-            .post('API/events', {
-                name: this.state.newEvent.name,
-                description: this.state.newEvent.description
-            })
+            .post('API/events', this.state.newEvent)
             .then(res => {
                 const eventsList = [...this.state.events]
                 eventsList.unshift(res.data)
