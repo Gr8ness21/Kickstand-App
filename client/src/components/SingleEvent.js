@@ -30,6 +30,7 @@ getSingleEvent=()=>{
 }
 
     componentDidMount = () => {
+        console.log("sup");
         this.getSingleEvent()
        
     }
@@ -56,7 +57,10 @@ getSingleEvent=()=>{
         e.preventDefault()
         axios
             .put(`/API/events/${this.props.match.params.id}`, {
-                name: this.state.singleEvent.name,
+                name: this.state.singleEvent.name
+                // description: this.state.singleEvent.description,
+                // time: this.state.singleEvent.time,
+                // location: this.state.singleEvent.location
             })
             .then(res => {
                 this.setState({ city: res.data, isEditFormDisplayed: false, redirectToHome: true })
@@ -72,10 +76,10 @@ getSingleEvent=()=>{
         return (
             <div className="singleEvent">
                 <Link to="/events">Back to Events</Link>
-                <h1>{this.state.resInfo.singleEvent.name}</h1>
-                <h2>{this.state.resInfo.singleEvent.description}</h2>
-                <h3>{this.state.resInfo.singleEvent.time}</h3>
-                <h4>{this.state.resInfo.singleEvent.location}</h4>
+                {/* <h1>{this.state.resInfo.singleEvent.name}</h1> */}
+                {/* <h2>{this.state.resInfo.singleEvent.description}</h2> */}
+                {/* <h3>{this.state.resInfo.singleEvent.time}</h3> */}
+                {/* <h4>{this.state.resInfo.singleEvent.location}</h4> */}
                 <button onClick={this.toggleEditForm}>Edit</button>
                 {
                     this.state.isEditFormDisplayed

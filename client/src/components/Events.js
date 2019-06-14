@@ -7,8 +7,9 @@ class Events extends Component {
         events: [],
         newEvent: {
             name: '',
-            description: ''
-            // ,location: {}
+            description: '',
+            time: '',
+            location: ''
         },
         isCityFormDisplayed: false
     }
@@ -44,8 +45,9 @@ class Events extends Component {
                 this.setState({
                     newEvent: {
                         name: '',
-                        description: ''
-                        // location: {}
+                        description: '',
+                        time: '',
+                        location: ''
                     },
                     isEventFormDisplayed: false,
                     events: eventsList
@@ -87,7 +89,7 @@ class Events extends Component {
                                         type="text"
                                         name="name"
                                         onChange={this.handleChange}
-                                        // value={this.state.newEvent.name}
+                                    // value={this.state.newEvent.name}
                                     />
                                 </div>
                                 <div>
@@ -97,7 +99,27 @@ class Events extends Component {
                                         type="text"
                                         name="description"
                                         onChange={this.handleChange}
-                                        // value={this.state.newEvent.description}
+                                    // value={this.state.newEvent.description}
+                                    />
+                                </div>
+                                <div>
+                                    <label htmlFor="time">Time</label>
+                                    <textarea
+                                        id="time"
+                                        type="text"
+                                        name="time"
+                                        onChange={this.handleChange}
+                                    // value={this.state.newEvent.time}
+                                    />
+                                </div>
+                                <div>
+                                    <label htmlFor="location">Location</label>
+                                    <textarea
+                                        id="location"
+                                        type="text"
+                                        name="location"
+                                        onChange={this.handleChange}
+                                    // value={this.state.newEvent.location}
                                     />
                                 </div>
                                 <button>Create</button>

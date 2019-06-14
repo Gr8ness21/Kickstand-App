@@ -28,7 +28,7 @@ class App extends Component {
             <Route exact path="/cities" component={Cities} />
             <Route exact path="/events" component={Events} />
             <Route exact path="/cities/:id" component={SingleCity} />
-            <Route exact path="/singleEvent/:id" component={SingleEvent} />
+            <Route exact path="/events/:id" component={SingleEvent} />
 
           </Switch>
         </div>

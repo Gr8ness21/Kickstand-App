@@ -93,6 +93,7 @@ getcity=()=>{
                             <button onClick={this.deleteCity}>Delete</button>
                         </div>
                 }
+                <Link to="/events">View Events</Link>
             </div>
         );
     }
