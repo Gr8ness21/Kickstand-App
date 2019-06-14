@@ -52,14 +52,14 @@ app.get('/API/City/:cityId', (req, res) => {
 
             //UNCOMMENT ONCE EVENTS ARE WORKING
 
-        //     cityAPI.getCityById(req.params.cityId)
-        //         .then((cities) => {
-        //             console.log(city)
+            // cityAPI.getCityById(req.params.cityId)
+            //     .then((cities) => {
+            //         console.log(city)
                     
-        //             console.log(events)
+            //         console.log(events)
                   
-        //             res.send({ city, events });
-        //         });
+            //         res.send({ city, events });
+            //     });
             res.send({city});
         });
 
@@ -103,7 +103,7 @@ app.delete('/API/Events/:eventId', (req, res) => {
 // Grab a single Event Object
 app.get('/API/Events/:eventId', (req, res) => {
     //gets events
-    eventAPI.getEventById(req.params.eventId)
+    eventsAPI.getEventById(req.params.eventId)
         .then(event => {
             res.send(event);
         });
@@ -111,7 +111,7 @@ app.get('/API/Events/:eventId', (req, res) => {
 
 // Updating an Event
 app.put('/API/Events/:eventId', (req, res) => {
-    eventAPI.updateEventById(req.params.eventId, req.body)
+    eventsAPI.updateEventById(req.params.eventId, req.body)
         .then((event) => {
             res.send(event);
         });
