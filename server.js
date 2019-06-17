@@ -6,6 +6,7 @@ const app = express();
 const cityAPI = require('./API/cityAPI.js');
 const eventsAPI = require('./API/eventsAPI.js');
 const singleEventAPI = require('./API/singleEventAPI.js');
+const unirest = require('unirest');
 
 app.use(logger('dev'))
 app.use(express.urlencoded({ extended: true }));
