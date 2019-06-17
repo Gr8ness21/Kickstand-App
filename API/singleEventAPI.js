@@ -5,8 +5,7 @@ const ObjectId = mongoose.Schema.Types.ObjectId;
 // Constructors have capital letters instead of camel case
 const SingleEventSchema = mongoose.Schema({
     name: String,
-    description: String,
-    Location: Object,
+    comment: String,
     userId: ObjectId
 });
 

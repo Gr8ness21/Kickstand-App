@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/Gr8ness21/Kickstand-App#readme",
   "dependencies": {
+    "axios": "^0.19.0",
     "concurrently": "^4.1.0",
     "dotenv": "^8.0.0",
     "express": "^4.17.1",

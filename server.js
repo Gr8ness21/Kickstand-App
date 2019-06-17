@@ -7,6 +7,7 @@ const cityAPI = require('./API/cityAPI.js');
 const eventsAPI = require('./API/eventsAPI.js');
 const singleEventAPI = require('./API/singleEventAPI.js');
 const unirest = require('unirest');
+const axios = require('axios');
 
 app.use(logger('dev'))
 app.use(express.urlencoded({ extended: true }));
@@ -16,6 +17,24 @@ app.use(express.json());
 app.use('/client/public', express.static("public"))
 
 app.use(express.static(__dirname + '/client/build/'));
+
+
+
+
+// _____________________________________
+//              WEATHER API 
+// _____________________________________
+
+app.get("/API/weather", (req, res) => {
+    axios.get("https://community-open-weather-map.p.rapidapi.com/weather?id=2172797&units=%22metric%22+or+%22imperial%22&mode=json%2C+html&q=Atlanta,USA",
+    {headers: {
+      "X-RapidAPI-Host": "community-open-weather-map.p.rapidapi.com",
+      "X-RapidAPI-Key": process.env.KICKSTAND_APP_KEY
+    }}).then(result => {
+      res.send(result.data)
+    })
+  })
+
 
 // _____________________________________
 //              City Model 
@@ -163,7 +182,7 @@ app.put('/API/singleEvent/:singleEventId', (req, res) => {
 
 //_______________________________________________________________//
 
-app.get('/', (req,res) => {
+app.get('/*', (req,res) => {
     res.sendFile(__dirname + '/client/build/index.html')
    })
 

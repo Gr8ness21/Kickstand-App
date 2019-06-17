@@ -10,20 +10,30 @@ class SingleEvent extends Component {
             time: '',
             location: ''
         },
+        weather: null,
         redirectToHome: false,
         isEditFormDisplayed: false
     }
-getSingleEvent=()=>{
-    axios.get(`/API/events/${this.props.match.params.id}`).then(res => {
-        console.log(res.data)
-        this.setState({ singleEvent: res.data  })
-    })
-}
+
+    getWeather = () => {
+        axios.get("/API/weather").then(res => {
+            console.log('THE WEATHER SHOULD BE HERE');
+            this.setState({ weather: res.data });
+        })
+    };
+
+    getSingleEvent = () => {
+        axios.get(`/API/events/${this.props.match.params.id}`).then(res => {
+            console.log(res.data)
+            this.setState({ singleEvent: res.data })
+        })
+    }
 
     componentDidMount = () => {
         console.log("sup");
         this.getSingleEvent()
-       
+        this.getWeather()
+
     }
 
     deleteSingleEvent = () => {
@@ -48,15 +58,15 @@ getSingleEvent=()=>{
         e.preventDefault()
         axios
             .put(`/API/events/${this.props.match.params.id}`, {
-                name: this.state.singleEvent.name
-                // description: this.state.singleEvent.description,
-                // time: this.state.singleEvent.time,
-                // location: this.state.singleEvent.location
+                name: this.state.singleEvent.name,
+                description: this.state.singleEvent.description,
+                time: this.state.singleEvent.time,
+                location: this.state.singleEvent.location
             })
             .then(res => {
                 this.setState({ city: res.data, isEditFormDisplayed: false, redirectToHome: true })
             })
-            this.getSingleEvent()
+        this.getSingleEvent()
     }
 
     render() {
@@ -85,6 +95,7 @@ getSingleEvent=()=>{
 
                             <button>Update</button>
                         </form>
+
                         : <div>
                             <div>
                                 Name: {this.state.singleEvent.name}
@@ -95,6 +106,8 @@ getSingleEvent=()=>{
                             <button onClick={this.deleteSingleEvent}>Delete</button>
                         </div>
                 }
+                {this.state.weather && <div>{this.state.weather.name} <br></br> {this.state.weather.weather[0].description} </div>}
+
             </div>
         );
     }

@@ -11,13 +11,22 @@ class Events extends Component {
             time: '',
             location: ''
         },
+        weather: null,
         isCityFormDisplayed: false
     }
+
+    getWeather = () => {
+        axios.get("/API/weather").then(res => {
+            console.log('THE WEATHER SHOULD BE HERE');
+            this.setState({ weather: res.data });
+        })
+    };
 
     componentDidMount = () => {
         axios.get('API/events').then(res => {
             this.setState({ events: res.data })
         })
+        this.getWeather()
     }
 
     toggleEventsForm = () => {
@@ -60,7 +69,7 @@ class Events extends Component {
             <div className="eventsPage">
                 <h3>Events</h3>
                 <div className="eventsImg"></div>
-
+{this.state.weather && <div>{this.state.weather.name} <br></br> {this.state.weather.weather[0].description} </div>}
                 <div className="eventsList">
 
                     {this.state.events.map(event => {
@@ -75,6 +84,7 @@ class Events extends Component {
                         )
                     })
                     }
+
                     <button onClick={this.toggleEventsForm}>+ New Event</button>
                     {
                         this.state.isEventsFormDisplayed
@@ -120,6 +130,8 @@ class Events extends Component {
                                     />
                                 </div>
                                 <button>Create</button>
+
+                                
                             </form>
                             : null
                     }

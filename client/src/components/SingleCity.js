@@ -17,16 +17,20 @@ class SingleCity extends Component {
         redirectToHome: false,
         isEditFormDisplayed: false
     }
-getcity=()=>{
-    axios.get(`/API/City/${this.props.match.params.id}`).then(res => {
-        console.log(res.data)
-        this.setState({ resInfo: res.data  })
-    })
-}
+
+
+
+
+    getcity = () => {
+        axios.get(`/API/City/${this.props.match.params.id}`).then(res => {
+            console.log(res.data)
+            this.setState({ resInfo: res.data })
+        })
+    }
 
     componentDidMount = () => {
         this.getcity()
-       
+
     }
 
     deleteCity = () => {
@@ -56,7 +60,7 @@ getcity=()=>{
             .then(res => {
                 this.setState({ city: res.data, isEditFormDisplayed: false, redirectToHome: true })
             })
-            this.getcity()
+        this.getcity()
     }
 
     render() {
@@ -90,6 +94,8 @@ getcity=()=>{
                             <div>
                                 Name: {this.state.city.name}
                             </div>
+                           
+
                             <button onClick={this.deleteCity}>Delete</button>
                         </div>
                 }

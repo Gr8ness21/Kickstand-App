@@ -27,7 +27,7 @@ function getCityById(cityId) {
 }
 
 // Function to delete team by Id *admin only*
-function deleteCityById(CityId) {
+function deleteCityById(cityId) {
     return CityCollection.deleteOne({ _id: cityId });
 }
 
