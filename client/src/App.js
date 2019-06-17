@@ -18,9 +18,7 @@ class App extends Component {
       <Router>
 
         <div>
-          <div>
-            <Nav />
-          </div>
+
 
           <Switch>
 
@@ -31,6 +29,11 @@ class App extends Component {
             <Route exact path="/events/:id" component={SingleEvent} />
 
           </Switch>
+
+          <div>
+            <Nav />
+          </div>
+          
         </div>
 
       </Router>

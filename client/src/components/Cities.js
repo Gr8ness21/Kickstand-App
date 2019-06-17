@@ -52,11 +52,10 @@ class Cities extends Component {
 
     render() {
         return (
-
-
+            <div>
             <div className="cityPage">
-                <h3>Cities</h3>
-                <div className="cityImg"></div>
+                <h3>Event Locations!</h3>
+                {/* <div className="cityImg"></div> */}
 
                 <div className="cityList">
 
@@ -72,7 +71,7 @@ class Cities extends Component {
                         )
                     })
                     }
-                    <button onClick={this.toggleCityForm}>+ New City</button>
+                    <button onClick={this.toggleCityForm}>+City</button>
                     {
                         this.state.isCityFormDisplayed
                             ? <form onSubmit={this.createCity}>
@@ -93,7 +92,7 @@ class Cities extends Component {
                 </div> 
 
             </div>
-
+            </div>
         )
     }
 }

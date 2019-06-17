@@ -73,7 +73,10 @@ class SingleCity extends Component {
                 <Link to="/cities">Back to Cities</Link>
                 <h1>{this.state.resInfo.city.name}</h1>
                 <p>{this.state.resInfo.city.description}</p>
+                <div className='buttonContain'>
                 <button onClick={this.toggleEditForm}>Edit</button>
+                <button onClick={this.deleteCity}>Delete</button>
+                </div>
                 {
                     this.state.isEditFormDisplayed
                         ? <form onSubmit={this.updateCity}>
@@ -92,14 +95,15 @@ class SingleCity extends Component {
                         </form>
                         : <div>
                             <div>
-                                Name: {this.state.city.name}
+                                {this.state.city.name}
                             </div>
-                           
-
-                            <button onClick={this.deleteCity}>Delete</button>
+                           <div>
+                               <h3>Checkout What's New!</h3>
+                           </div>
+                            
                         </div>
                 }
-                <Link to="/events">View Events</Link>
+                <Link to="/events"><div className="eventsLink">View Events</div></Link>
             </div>
         );
     }
