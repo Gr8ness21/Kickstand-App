@@ -10,22 +10,13 @@ class SingleEvent extends Component {
             time: '',
             location: ''
         },
-        resInfo: {
-            singleEvent: {
-                _id: '',
-                name: '',
-                description: '',
-                time: '',
-                location: ''
-            },
-        },
         redirectToHome: false,
         isEditFormDisplayed: false
     }
 getSingleEvent=()=>{
     axios.get(`/API/events/${this.props.match.params.id}`).then(res => {
         console.log(res.data)
-        this.setState({ resInfo: res.data  })
+        this.setState({ singleEvent: res.data  })
     })
 }
 
@@ -76,10 +67,7 @@ getSingleEvent=()=>{
         return (
             <div className="singleEvent">
                 <Link to="/events">Back to Events</Link>
-                {/* <h1>{this.state.resInfo.singleEvent.name}</h1> */}
-                {/* <h2>{this.state.resInfo.singleEvent.description}</h2> */}
-                {/* <h3>{this.state.resInfo.singleEvent.time}</h3> */}
-                {/* <h4>{this.state.resInfo.singleEvent.location}</h4> */}
+
                 <button onClick={this.toggleEditForm}>Edit</button>
                 {
                     this.state.isEditFormDisplayed
@@ -100,6 +88,9 @@ getSingleEvent=()=>{
                         : <div>
                             <div>
                                 Name: {this.state.singleEvent.name}
+                                Time: {this.state.singleEvent.time}
+                                Description: {this.state.singleEvent.description}
+                                Location: {this.state.singleEvent.location}
                             </div>
                             <button onClick={this.deleteSingleEvent}>Delete</button>
                         </div>

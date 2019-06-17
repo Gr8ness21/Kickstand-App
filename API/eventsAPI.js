@@ -5,7 +5,9 @@ const ObjectId = mongoose.Schema.Types.ObjectId;
 // Constructors have capital letters instead of camel case
 const EventsSchema = mongoose.Schema({
     name: String,
-    location: Object,
+    description: String,
+    time: String,
+    location: String,
     eventId: ObjectId
 });
 
