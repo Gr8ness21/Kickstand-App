@@ -113,7 +113,7 @@ width: 60vw;
 .eventsPage{
 display: flex;
 flex-direction: column;
-background: url("#") gray;
+background: url("Images/CityBackground.png") fixed center black;
 height: 100vh;
 width: 100vw;
 align-items: center;
@@ -177,3 +177,14 @@ width: 51vw;
 }
 
 
+.singleEvent{
+  background: url("Images/bikenight.jpg") fixed;
+  background-size: 100% 100%;
+  height: 100vh;
+  width: 100vw;
+  align-items: center;
+  background-repeat: no-repeat;
+  color: #f3c300;
+  display: flex;
+  flex-direction: column;
+}
