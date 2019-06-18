@@ -97,16 +97,19 @@ class SingleEvent extends Component {
                         </form>
 
                         : <div>
-                            <div>
+                            <div className="singleEventList">
                                 Name: {this.state.singleEvent.name}
+                                <br></br>
                                 Time: {this.state.singleEvent.time}
+                                <br></br>
                                 Description: {this.state.singleEvent.description}
+                                <br></br>
                                 Location: {this.state.singleEvent.location}
                             </div>
                             <button onClick={this.deleteSingleEvent}>Delete</button>
                         </div>
                 }
-                {this.state.weather && <div>{this.state.weather.name} <br></br> {this.state.weather.weather[0].description} </div>}
+                {this.state.weather && <div className="singleEventWeather">{this.state.weather.name} <br></br> {this.state.weather.weather[0].description} </div>}
 
             </div>
         );

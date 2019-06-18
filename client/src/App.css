@@ -188,3 +188,22 @@ width: 51vw;
   display: flex;
   flex-direction: column;
 }
+
+.singleEventList{
+  font-family: 'vintage';
+  color: #f3c300;
+  font-size: 60px;
+  background: black;
+  border: solid #f3c300 3px;
+  text-align: center;
+  align-content: center;
+  border-radius: 12px;
+  opacity: .7;
+  width: 60vw;
+  height: 40vh;
+}
+
+.singleEventWeather{
+  font-family: 'biker';
+  font-size: 70px;
+}
