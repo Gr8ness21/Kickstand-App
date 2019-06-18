@@ -67,9 +67,12 @@ class Events extends Component {
 
 
             <div className="eventsPage">
-                <h3>Events</h3>
+            
+                <h5>Events</h5>
+                <div className="eventWeatherMap">
                 <div className="eventsImg"></div>
-{this.state.weather && <div>{this.state.weather.name} <br></br> {this.state.weather.weather[0].description} </div>}
+{this.state.weather && <div>{this.state.weather.name} <br></br> <h4>Current Weather =</h4><h5>{this.state.weather.weather[0].description}</h5> </div>}
+</div>
                 <div className="eventsList">
 
                     {this.state.events.map(event => {
@@ -85,7 +88,7 @@ class Events extends Component {
                     })
                     }
 
-                    <button onClick={this.toggleEventsForm}>+ New Event</button>
+                    <button onClick={this.toggleEventsForm}>+Event</button>
                     {
                         this.state.isEventsFormDisplayed
                             ? <form onSubmit={this.createEvent}>

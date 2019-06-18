@@ -13,6 +13,21 @@ h1, h3{
   font-size: 70px;
   color: black;
 }
+h4{
+  font-family: 'biker';
+  font-size: 10px;
+  color: #f3c300;
+  margin-top: -10px;
+  text-align: right;
+}
+h5{
+  font-family: 'biker';
+  font-size: 80px;
+  color: black;
+  margin-top: -20px;
+  margin-bottom: 80px;
+  padding: 0;
+}
 
 p{
   font-family: 'biker';
@@ -87,7 +102,7 @@ width: 60vw;
 }
 .cityList{
 color: #f3c300;
-font-size: 20px;
+font-size: 30px;
 background: black;
 border: solid whitesmoke 5px;
 text-align: center;
@@ -95,7 +110,7 @@ border-radius: 12px;
 opacity: .7;
 width: 60vw;
 }
-.parkPage{
+.eventsPage{
 display: flex;
 flex-direction: column;
 background: url("#") gray;
@@ -106,24 +121,31 @@ background-repeat: no-repeat;
 background-size: 100% 100%;
 font-family: 'Courier New', Courier, monospace;
 font-weight: bold;
-color: teal;
+color: black;
+font-family: 'biker';
+font-size: 20px;
 }
-.parkImg{
-  background: url("#") black;
+.eventWeatherMap{
+  display: flex;
+  flex-direction: row;
+}
+.eventsImg{
+  background: url("Images/AtlantaMap.png") black;
 background-size: 100% 100%;
-margin-top: -40px;
-height: 50vh;
-width: 60vw;
+margin-top: -90px;
+height: 500px;
+width: 51vw;
 }
-.parkList{
-  color: teal;
+.eventsList{
+  color: #f3c300;
   font-size: 20px;
   background: black;
-  border: solid whitesmoke 5px;
+  border: solid #f3c300 3px;
   text-align: center;
-  border-radius: 12px;
+  /* border-radius: 12px; */
   opacity: .7;
   width: 60vw;
+  /* margin-top: -20px; */
 }
 .singleCity{
   background: url("Images/drone.jpg") fixed;
@@ -138,7 +160,7 @@ width: 60vw;
 }
 
 .App-link {
-  color: #61dafb;
+  color: #f3c300;
 }
 
 .eventsLink{
